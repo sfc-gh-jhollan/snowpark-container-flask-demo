@@ -1,0 +1,11 @@
+POST http://localhost:5000/
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 42,
+  "address": "123 Main St",
+  "city": "Anytown",
+  "state": "CA",
+  "zip": "12345"
+}

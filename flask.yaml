@@ -1,0 +1,7 @@
+spec:
+  container:
+    - name: api
+      image: temptest-snowflake.registry-dev.snowflakecomputing.com/jhollan/public/images/flask-echo
+  endpoint:
+    - name: flask
+      port: 5000
