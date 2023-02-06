@@ -9,3 +9,6 @@ Content-Type: application/json
   "state": "CA",
   "zip": "12345"
 }
+
+### Poll
+GET http://localhost:5000/
