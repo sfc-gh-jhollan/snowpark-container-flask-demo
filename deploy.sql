@@ -5,3 +5,8 @@ CREATE SERVICE flask
   SPEC = @deploy/flask.yaml;
 
 desc service flask;
+
+
+create or replace function echo(v varchar)
+  returns varchar
+  service=flask!flask;
