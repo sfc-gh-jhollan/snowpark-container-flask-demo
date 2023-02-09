@@ -1,7 +1,19 @@
 spec:
   container:
     - name: api
-      image: temptest-snowflake.registry-dev.snowflakecomputing.com/jhollan/public/images/flask-echo
+      image: temptest-temptestservicesnow.registry-dev.snowflakecomputing.com/jhollan/public/images/async-api
+    - name: worker
+      image: temptest-temptestservicesnow.registry-dev.snowflakecomputing.com/jhollan/public/images/async-api
+      command: ["python"]
+      args: ["-m", "celery", "-A", "api.celery", "worker", "--loglevel=info"]
+    - name: redis
+      image: temptest-temptestservicesnow.registry-dev.snowflakecomputing.com/jhollan/public/images/redis
+      volumeMounts:
+        - name: vol1
+          mountPath: /local/user/data
   endpoint:
     - name: flask
       port: 5000
+  volume:
+    - name: vol1
+      source: local
