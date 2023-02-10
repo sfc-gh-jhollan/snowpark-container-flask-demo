@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/", methods=["POST"])
 def udf():
     try:
-        req = request.get_json(force=True)
+        req: dict = request.get_json(force=True) #type: ignore
         return_set = []
         for(i, column1_raw) in req['data']:
             print(column1_raw)
